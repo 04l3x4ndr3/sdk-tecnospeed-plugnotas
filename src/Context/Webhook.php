@@ -99,7 +99,7 @@ class Webhook extends HTTPClient
      */
     public function cadastrar(): object
     {
-        $endpoint = "{$this->cnpj}/webhook";
+        $endpoint = "empresa/$this->cnpj/webhook";
         $data = array_filter($this->toArray());
         return $this->call('POST', $endpoint, $data);
     }
@@ -110,7 +110,7 @@ class Webhook extends HTTPClient
      */
     public function alterar(): object
     {
-        $endpoint = "{$this->cnpj}/webhook";
+        $endpoint = "empresa/$this->cnpj/webhook";
         $data = array_filter($this->toArray());
         return $this->call('PUT', $endpoint, $data);
     }
@@ -121,7 +121,7 @@ class Webhook extends HTTPClient
      */
     public function consultar(): object
     {
-        $endpoint = "{$this->cnpj}/webhook";
+        $endpoint = "empresa/$this->cnpj/webhook";
         return $this->call('GET', $endpoint);
     }
 
@@ -131,7 +131,7 @@ class Webhook extends HTTPClient
      */
     public function remover(): object
     {
-        $endpoint = "{$this->cnpj}/webhook";
+        $endpoint = "empresa/$this->cnpj/webhook";
         return $this->call('DELETE', $endpoint);
     }
 
@@ -141,7 +141,7 @@ class Webhook extends HTTPClient
      */
     public function testar(): object
     {
-        $endpoint = "{$this->cnpj}/webhook/verify";
+        $endpoint = "empresa/{$this->cnpj}/webhook/verify";
         return $this->call('POST', $endpoint);
     }
 
